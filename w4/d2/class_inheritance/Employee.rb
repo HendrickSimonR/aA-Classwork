@@ -15,6 +15,21 @@ class Employee # SUPER
       return self.salary * multiplier
     else 
       # bonus = (total salary of all sub-employees) * multiplier
+      boss_bonus * multiplier
     end  
   end 
+
+  # helper
+  def boss_bonus
+    return self.salary if self.employees.empty?
+    total = 0
+    self.employees.each do |employee|
+      if !employee.employees.empty?
+        total += employee.boss_bonus
+      else 
+        total += employee.salary
+      end
+    end
+    total
+  end
 end
