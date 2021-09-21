@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 require_relative 'Manager'
-=======
-require_relative 'Manager.rb'
->>>>>>> 3c298e23404f6fe30b7e3109ddafa22660874fe5
-=======
-require_relative 'Manager.rb'
->>>>>>> 3c298e23404f6fe30b7e3109ddafa22660874fe5
 
 class Employee # SUPER
   attr_reader :salary
