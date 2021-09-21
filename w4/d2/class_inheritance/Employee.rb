@@ -1,4 +1,4 @@
-require 'Manager.rb'
+require_relative 'Manager.rb'
 
 class Employee # SUPER
   attr_reader :salary
@@ -21,12 +21,11 @@ class Employee # SUPER
 
   # helper
   def boss_bonus
-    return self.salary if self.employees.empty?
     total = 0
 
     self.employees.each do |employee|
       if !employee.employees.empty?
-        total += employee.boss_bonus
+        total += employee.boss_bonus + employee.salary
       else 
         total += employee.salary
       end
@@ -36,6 +35,7 @@ class Employee # SUPER
   end
 end
 
-Boss = David 
-Davids Employees = [kyle, peter, michael]
+
+# Boss = David 
+# Davids Employees = [kyle, peter, michael]
 # Kyles Employees = [jessica, janet, Brian]
