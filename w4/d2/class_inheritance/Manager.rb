@@ -1,5 +1,9 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 require_relative 'Employee'
+=======
+require_relative 'Employee.rb'
+>>>>>>> 3c298e23404f6fe30b7e3109ddafa22660874fe5
 =======
 require_relative 'Employee.rb'
 >>>>>>> 3c298e23404f6fe30b7e3109ddafa22660874fe5
