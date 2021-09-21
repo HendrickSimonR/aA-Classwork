@@ -8,6 +8,7 @@ class Manager < Employee
   end 
 end 
 
+nonsense 
 # David = Employee.new(David, director developer, 100000000, Carl)
 
 # David.employees 
