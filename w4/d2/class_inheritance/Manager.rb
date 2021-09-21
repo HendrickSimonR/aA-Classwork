@@ -8,8 +8,8 @@ class Manager < Employee
   end 
 end 
 
-David = Employee.new(David, director developer, 100000000, Carl)
+# David = Employee.new(David, director developer, 100000000, Carl)
 
-David.employees 
+# David.employees 
 
-All Managers are employees (all managers have salaries )
+# All Managers are employees (all managers have salaries )
