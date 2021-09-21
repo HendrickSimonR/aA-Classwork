@@ -1,5 +1,4 @@
-require_relative 'Manager.rb'
-
+require_relative 'Manager'
 
 class Employee # SUPER
   attr_reader :salary
