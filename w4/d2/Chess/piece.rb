@@ -1,4 +1,4 @@
-class Piece
+class Piece #SUPERCLASS
 
   def initialize(color, board, pos)
     @color = color # white/black

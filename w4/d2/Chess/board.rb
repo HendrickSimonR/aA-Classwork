@@ -4,7 +4,7 @@ class Board
 
   def initialize
     @board = Array.new(8) { Array.new(8) } 
-    @sentinal = NullPiece
+    @sentinal = nil
   end
 
   def [](pos)
@@ -26,8 +26,14 @@ class Board
 
   def move_piece!(color, start_pos, end_pos)
     raise RuntimeError.new("No Piece") if self[start_pos] == @sentinal
-    raise RuntimeError.new("Invalid End Position") if self[end_pos]
+    raise RuntimeError.new("Invalid End Position") if !self.valid_pos?(end_pos) 
 
+    move_this = self[start_pos] 
+    self[end_pos] = move_this
+    self[start_pos] = @sentinal
   end
 
 end
+
+# take piece, move to new pos @self[end_pos] = piece???
+# make prev pos a null piece @self[start_pos] + nullpiece
