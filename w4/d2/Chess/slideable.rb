@@ -22,8 +22,8 @@ module Slideable #rook, queen, bishop
   #   DIAGONAL_DIRS
   # end
 
-  def moves # maybe take in a pos?
-    # call grow_unblocked_(pos) & return result 
+  def moves(dx, dy) # maybe take in a pos?
+    grow_unblocked_moves_in_dir(dx, dy)
   end
 
   private
@@ -32,6 +32,7 @@ module Slideable #rook, queen, bishop
   end
 
   def grow_unblocked_moves_in_dir(dx, dy) # <= piece's current position
+    puts [dx, dy]
     # return possible positions from piece's current position
   end
 

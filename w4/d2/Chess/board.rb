@@ -1,6 +1,6 @@
 require_relative 'Piece'
-
 require "byebug"
+
 class Board
   attr_reader :board
 

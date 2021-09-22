@@ -1,4 +1,5 @@
 class Piece #SUPERDUPER
+  attr_reader :board 
 
   def initialize(color, board, pos)
     @color = color # white/black
@@ -10,6 +11,7 @@ class Piece #SUPERDUPER
   end
 
   def to_s
+    @board.each { |row| puts row.join(' ') }
   end
 
   def empty?
@@ -17,7 +19,7 @@ class Piece #SUPERDUPER
 
   def moves(pos) # (piece_class, pos) ? (Rook, [0,0])
     result = []
-
+  
     result
   end 
 end
