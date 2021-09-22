@@ -1,6 +1,10 @@
+require_relative "Piece"
+require_relative "Slideable"
+
 class Queen < Piece # horizontal & diagonal 
   include Slideable
   
-  def move_dirs # return diagonal and horizontal spaces available
+  def self.move_dirs
+    HORIZONTAL_DIRS + DIAGONAL_DIRS
   end
 end

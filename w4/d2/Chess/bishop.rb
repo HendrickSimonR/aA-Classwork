@@ -1,8 +1,10 @@
+require_relative "Piece"
+require_relative "Slideable"
+
 class Bishop < Piece # diagonal only
   include Slideable
   
-  def move_dirs # have to call module & return possible directions? 
-    # this => modules => private method +> returns all of the possible diagonal moves the bishop can make 
-    #should only return diagonal dirs, (specific diagonal spaces?)
+  def self.move_dirs
+    DIAGONAL_DIRS
   end
 end

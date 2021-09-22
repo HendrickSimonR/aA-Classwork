@@ -13,13 +13,13 @@ module Slideable #rook, queen, bishop
     [1, -1]
   ]
 
-  def horizontal_dirs
-    HORIZONTAL_DIRS
-  end
+  # def horizontal_dirs
+  #   HORIZONTAL_DIRS
+  # end
 
-  def diagonal_dirs
-    DIAGONAL_DIRS
-  end
+  # def diagonal_dirs
+  #   DIAGONAL_DIRS
+  # end
 
   def moves # maybe take in a pos?
     # call grow_unblocked_(pos) & return result 
