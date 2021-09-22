@@ -1,18 +1,21 @@
 require_relative 'Piece'
 
+require "byebug"
 class Board
+  attr_reader :board
 
   def initialize
     @board = Array.new(8) { Array.new(8) } 
-    @sentinal = nil
+    # debugger
+    @sentinal = nil # NullPiece
   end
 
-  def [](pos)
+  def [](pos) # ERROR?!
     row, col = pos
     @board[row][col]
   end
 
-  def []=(pos, val)
+  def []=(pos, val) # ERROR?! 
     row, col = pos
     @board[row][col] = val
   end
