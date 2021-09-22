@@ -1,14 +1,18 @@
 require_relative 'Employee'
 
 class Manager < Employee 
-  attr_reader :employees
+  attr_accessor :employees
 
-  def initialize 
+  def initialize(title, salary, boss=nil)
+    super(title, salary, boss)
     @employees = []
+  end 
+
+  def add_employees(employees)
+    employees.each { |employee| @employees << employee }
   end 
 end 
 
-nonsense 
 # David = Employee.new(David, director developer, 100000000, Carl)
 
 # David.employees 

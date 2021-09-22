@@ -1,10 +1,9 @@
-require_relative 'Manager'
+# require_relative 'Manager'
 
 class Employee # SUPER
-  attr_reader :salary
+  attr_reader :salary, :title, :boss
 
-  def initialize(name, title, salary, boss)
-    @name = name
+  def initialize(title, salary, boss=nil)
     @title = title
     @salary = salary 
     @boss = boss # nil 
@@ -35,7 +34,18 @@ class Employee # SUPER
   end
 end
 
+ned = Employee.new('Founder', 1000000)
+darren = Employee.new('TA Manager', 78000, ned)
+shawna = Employee.new('TA', 12000, darren)
+david = Employee.new('TA', 10000, darren)
 
-# Boss = David 
-# Davids Employees = [kyle, peter, michael]
-# Kyles Employees = [jessica, janet, Brian]
+ned.add_employees([darren])
+ned = Manager.new('Founder', 1000000)
+puts ned.employees
+
+# ned.add_employees([darren])
+# darren.add_employees([shawna, david])
+
+puts ned.bonus(5) 
+puts darren.bonus(4)
+puts david.bonus(3) 
