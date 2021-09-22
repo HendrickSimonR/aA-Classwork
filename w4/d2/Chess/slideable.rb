@@ -13,6 +13,7 @@ module Slideable #rook, queen, bishop
     [1, -1]
   ]
 
+  # MAYBE DONT NEED THESE ?
   # def horizontal_dirs
   #   HORIZONTAL_DIRS
   # end
@@ -27,7 +28,7 @@ module Slideable #rook, queen, bishop
 
   private
 
-  def move_dirs # overwritten by subclass (?)
+  def move_dirs # ERROR IF move_dirs not written properly
   end
 
   def grow_unblocked_moves_in_dir(dx, dy) # <= piece's current position
@@ -35,6 +36,8 @@ module Slideable #rook, queen, bishop
   end
 
 end
+
+# until !valid_moves? 
 
 
 

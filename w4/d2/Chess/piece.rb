@@ -1,4 +1,4 @@
-class Piece
+class Piece #SUPERDUPER
 
   def initialize(color, board, pos)
     @color = color # white/black
@@ -15,12 +15,16 @@ class Piece
   def empty?
   end
 
-  def moves
+  def moves(pos) # (piece_class, pos) ? (Rook, [0,0])
     result = []
 
     result
   end 
 end
+
+# piece_class.move_dirs.each do |direction|
+#    result << grow_unblocked(direction)
+# end 
 
 
 
