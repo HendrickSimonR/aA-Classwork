@@ -21,15 +21,17 @@ module Slideable #rook, queen, bishop
     DIAGONAL_DIRS
   end
 
-  def moves
+  def moves # maybe take in a pos?
+    # call grow_unblocked_(pos) & return result 
   end
 
   private
 
-  def move_dirs
+  def move_dirs # overwritten by subclass (?)
   end
 
-  def grow_unblocked_moves_in_dir(dx, dy)
+  def grow_unblocked_moves_in_dir(dx, dy) # <= piece's current position
+    # return possible positions from piece's current position
   end
 
 end
