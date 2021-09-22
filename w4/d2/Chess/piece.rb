@@ -29,7 +29,28 @@ class Rook < Piece
   end
 end
 
+class Bishop < Piece
+  include Slideable
+  
+  def move_dirs
+  end
+end
+
+class Queen < Piece
+  include Slideable
+  
+  def move_dirs
+  end
+end
+
+
 class Knight < Piece
+
+  def move_dirs
+  end
+end
+
+class King < Piece
 
   def move_dirs
   end
