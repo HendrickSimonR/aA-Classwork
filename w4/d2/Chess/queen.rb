@@ -1,10 +1,10 @@
-require_relative "Piece"
-require_relative "Slideable"
+require_relative "piece"
+require_relative "slideable"
 
 class Queen < Piece # horizontal & diagonal 
   include Slideable
   
-  def self.move_dirs
-    HORIZONTAL_DIRS + DIAGONAL_DIRS
+  def move_dirs
+    puts horizontal_dirs + diagonal_dirs
   end
 end
