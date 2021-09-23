@@ -21,3 +21,22 @@ describe "Array" do
     end
   end
 end
+
+
+describe "#my_transpose" do
+  let(:two_d_array) { [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ] }
+  let(:transposed) { [ [1, 4, 7], [2, 5, 8], [3, 6, 9] ] } 
+
+  it "should accept an array as an arg" do
+    expect{my_transpose(two_d_array)}.to_not raise_error
+  end
+
+  it "should transpose array (row to column and column to row)" do
+    expect(my_transpose(two_d_array)).to eq(transposed)
+  end 
+
+  it "should not use built_in method Array#transpose" do
+    expect(two_d_array).to_not receive(:transpose)
+    my_transpose(two_d_array)
+  end 
+end

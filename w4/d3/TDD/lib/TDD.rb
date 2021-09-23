@@ -14,3 +14,7 @@ class Array
   end
 end
 
+def my_transpose(two_d_array)
+  
+end 
+
