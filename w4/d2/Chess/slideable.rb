@@ -21,8 +21,12 @@ module Slideable #rook, queen, bishop
     DIAGONAL_DIRS
   end
 
-  def moves(dx, dy) # maybe take in a pos?
-    grow_unblocked_moves_in_dir(dx, dy)
+  def moves# maybe take in a pos?
+    result = []
+    move_dirs.each do |dx, dy|
+      result.concat(grow_unblocked_moves_in_dir(dx, dy))
+    end
+    result
   end
 
   private
@@ -31,10 +35,22 @@ module Slideable #rook, queen, bishop
     raise NotImplementedError
   end
 
-  def grow_unblocked_moves_in_dir(dx, dy) # <= piece's current position
-    puts [dx, dy]
-    # return possible positions from piece's current position
-  end
+  def grow_unblocked_moves_in_dir(dx, dy) # [1,1]
+    result = []
+    x, y = pos
+    new_pos = dx
+
+    until !board.valid_pos?(new_pos)
+      x, y = x + dx, y + dy
+    end
+    
+
+    
+
+
+
+    result
+  end 
 
 end
 
