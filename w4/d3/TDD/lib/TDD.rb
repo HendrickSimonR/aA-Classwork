@@ -15,6 +15,15 @@ class Array
 end
 
 def my_transpose(two_d_array)
-  
+  transposed = []
+  (0...two_d_array.length).each do |i|
+    sub_array = []
+    (0...two_d_array.length).each do |j|
+      sub_array << two_d_array[j][i]
+    end
+    transposed << sub_array
+  end
+  transposed
 end 
 
+#find unique pairs 

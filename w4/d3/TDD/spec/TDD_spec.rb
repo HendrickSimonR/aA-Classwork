@@ -40,3 +40,13 @@ describe "#my_transpose" do
     my_transpose(two_d_array)
   end 
 end
+
+describe "#stock_picker" do
+  let(:stock_prices) {[20, 17, 15, 20, 23]}
+
+  it "should accept an array as an arg" do
+    expect{stock_picker(stock_prices)}.to_not raise_error
+  end
+
+  
+end
