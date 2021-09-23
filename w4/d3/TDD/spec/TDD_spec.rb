@@ -43,10 +43,17 @@ end
 
 describe "#stock_picker" do
   let(:stock_prices) {[20, 17, 15, 20, 23]}
+  let(:stock_prices2) {[20, 17, 23, 20, 15]}
 
   it "should accept an array as an arg" do
     expect{stock_picker(stock_prices)}.to_not raise_error
   end
 
-  
+  it "should return pair of indices representing days of max profit" do 
+    expect(stock_picker(stock_prices)).to eq([2, 4])
+  end   
+
+  it "should return pair of indices where first index is smaller than second index" do 
+    expect(stock_picker(stock_prices2)).to eq([1, 2])
+  end 
 end

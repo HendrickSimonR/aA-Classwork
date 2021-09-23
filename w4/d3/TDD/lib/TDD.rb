@@ -26,4 +26,9 @@ def my_transpose(two_d_array)
   transposed
 end 
 
+
+def stock_picker(days)
+  
+end
+
 #find unique pairs 
