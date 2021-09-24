@@ -28,3 +28,43 @@ end
 
 # p second_anagram?("gizmo", "sally")
 # p second_anagram?("elvisssssssssssssssssss", "livesssssssssssssssssss")
+# linear because only one loop
+
+def third_anagram?(str1, str2)
+  str1.split('').sort == str2.split('').sort
+end
+
+# p third_anagram?("gizmo", "sally")    #=> false
+# p third_anagram?("elvis", "lives")    #=> true
+
+# run time of split linear, sort is nlogn
+# better
+
+def fourth_anagram?(str1, str2)
+  hash1 = Hash.new(0)
+  hash2 = Hash.new(0)
+  str1.each_char { |char| hash1[char] += 1 }
+  str2.each_char { |char| hash2[char] += 1 }
+  hash1.sort == hash2.sort
+end
+
+# p fourth_anagram?("gizmo", "sally")    #=> false
+# p fourth_anagram?("elvis", "lives")    #=> true
+
+# time complexity: n^2
+
+def bonus_anagram?(str1, str2)
+  hash = Hash.new(0)
+  str1.each_char { |char| hash[char] += 1 }
+  str2.each_char do |char|
+    if hash.has_key?(char) && hash[char] > 0
+      hash[char] -= 1
+    else
+      return false
+    end
+  end
+  true
+end
+
+p bonus_anagram?("gizmo", "sally")    #=> false
+p bonus_anagram?("elvis", "lives")    #=> true
