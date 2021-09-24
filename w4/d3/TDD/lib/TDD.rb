@@ -28,7 +28,20 @@ end
 
 
 def stock_picker(days)
-  
+  buy_and_sell = []
+  (0...days.length - 1).each do |i|
+    (i + 1...days.length).each {|j| buy_and_sell << [days[i], days[j]]}
+  end
+  max_profit = 0
+  best_days = nil
+  buy_and_sell.each do |profit|
+    gains =  profit[1] - profit[0]
+    if gains > max_profit
+      max_profit = gains
+      best_days = [days.index(profit[0]), days.index(profit[1]) ]
+    end
+  end
+  best_days
 end
 
 #find unique pairs 
