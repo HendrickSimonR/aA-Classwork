@@ -58,8 +58,8 @@ end
     # [-7]          # => -7
 
 def largest_contiguous_subsum2(list)
-  largest_sum = list.first #2
-  current_sum = list.first #2
+  largest_sum = list.first
+  current_sum = list.first
 
   (1...list.length).each do |i|
     if current_sum < 0
