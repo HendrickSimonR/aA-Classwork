@@ -331,3 +331,204 @@ Processing by CatsController#index as HTML
 Completed 200 OK in 6123ms (Views: 6115.6ms | ActiveRecord: 6.7ms)
 
 
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mCat Load (39.9ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+Started GET "/" for ::1 at 2021-10-08 19:42:36 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/julian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/julian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/julian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/railties-5.2.6/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 17ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cats" for ::1 at 2021-10-08 19:42:41 -0400
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.7ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:3
+  Rendered cats/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 769ms (Views: 762.2ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/cats" for ::1 at 2021-10-08 19:44:49 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/julian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.5ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:3
+  Rendered cats/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 158ms (Views: 151.2ms | ActiveRecord: 1.8ms)
+
+
+  [1m[36mCat Load (0.5ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mCat Load (0.5ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[36mCat Load (0.5ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mCat Load (0.6ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCat Create (41.9ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "2020-06-12"], ["color", "orange"], ["name", "Karl"], ["sex", "M"], ["description", "nani, nani, nani?"], ["created_at", "2021-10-08 23:47:08.500052"], ["updated_at", "2021-10-08 23:47:08.500052"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCat Create (0.7ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "1998-09-26"], ["color", "gray"], ["name", "Troy"], ["sex", "M"], ["description", "all tomato"], ["created_at", "2021-10-08 23:47:16.064820"], ["updated_at", "2021-10-08 23:47:16.064820"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:8
+  [1m[36mCat Load (40.5ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ db/seeds.rb:9
+  [1m[36mCat Destroy (40.8ms)[0m  [1m[31mDELETE FROM "cats" WHERE "cats"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mCat Destroy (0.2ms)[0m  [1m[31mDELETE FROM "cats" WHERE "cats"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:9
+  [1m[36mCat Create (0.4ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "2020-06-12"], ["color", "orange"], ["name", "Karl"], ["sex", "M"], ["description", "nani, nani, nani?"], ["created_at", "2021-10-08 23:49:20.897281"], ["updated_at", "2021-10-08 23:49:20.897281"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCat Create (0.7ms)[0m  [1m[32mINSERT INTO "cats" ("birth_date", "color", "name", "sex", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["birth_date", "1998-09-26"], ["color", "gray"], ["name", "Troy"], ["sex", "M"], ["description", "all tomato"], ["created_at", "2021-10-08 23:49:32.934467"], ["updated_at", "2021-10-08 23:49:32.934467"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/cats" for ::1 at 2021-10-08 19:49:56 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/julian/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.6/lib/active_record/log_subscriber.rb:98
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.6ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:3
+  Rendered cats/index.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 253ms (Views: 236.2ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/cats" for ::1 at 2021-10-08 19:50:18 -0400
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:3
+  Rendered cats/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 43ms (Views: 41.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cats" for ::1 at 2021-10-08 19:52:05 -0400
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:3
+  Rendered cats/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 22ms (Views: 21.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cats" for ::1 at 2021-10-08 19:54:33 -0400
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  Rendered cats/index.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/julian/Desktop/aA/pairing/aA-Classwork/w6/d5/cats99/app/views/cats/index.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+...uffer.append=( "Birthday: " cat.birth_date );@output_buffer....
+...                            ^~~
+/Users/julian/Desktop/aA/pairing/aA-Classwork/w6/d5/cats99/app/views/cats/index.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+...ut_buffer.append=( "Color: "cat.color );@output_buffer.safe_...
+...                            ^~~
+/Users/julian/Desktop/aA/pairing/aA-Classwork/w6/d5/cats99/app/views/cats/index.html.erb:8: syntax error, unexpected tIDENTIFIER, expecting ')'
+...tput_buffer.append=( "Sex: "cat.sex );@output_buffer.safe_ap...
+...                            ^~~
+/Users/julian/Desktop/aA/pairing/aA-Classwork/w6/d5/cats99/app/views/cats/index.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting ')'
+...fer.append=( "Description: "cat.description );@output_buffer...
+...                            ^~~):
+  
+app/views/cats/index.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/cats/index.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/cats/index.html.erb:8: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/cats/index.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/cats_controller.rb:4:in `index'
+Started GET "/cats" for ::1 at 2021-10-08 19:54:53 -0400
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  Rendered cats/index.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/julian/Desktop/aA/pairing/aA-Classwork/w6/d5/cats99/app/views/cats/index.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+...uffer.append=( "Birthday: " cat.birth_date );@output_buffer....
+...                            ^~~
+/Users/julian/Desktop/aA/pairing/aA-Classwork/w6/d5/cats99/app/views/cats/index.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+...t_buffer.append=( "Color: " cat.color );@output_buffer.safe_...
+...                            ^~~
+/Users/julian/Desktop/aA/pairing/aA-Classwork/w6/d5/cats99/app/views/cats/index.html.erb:8: syntax error, unexpected tIDENTIFIER, expecting ')'
+...put_buffer.append=( "Sex: " cat.sex );@output_buffer.safe_ap...
+...                            ^~~
+/Users/julian/Desktop/aA/pairing/aA-Classwork/w6/d5/cats99/app/views/cats/index.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting ')'
+...er.append=( "Description: " cat.description );@output_buffer...
+...                            ^~~):
+  
+app/views/cats/index.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/cats/index.html.erb:7: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/cats/index.html.erb:8: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/cats/index.html.erb:9: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/controllers/cats_controller.rb:4:in `index'
+Started GET "/cats" for ::1 at 2021-10-08 19:58:17 -0400
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:3
+  Rendered cats/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 27ms (Views: 25.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cats" for ::1 at 2021-10-08 19:59:46 -0400
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:3
+  Rendered cats/index.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Date into String):
+    3: <% @cats.each do |cat| %>
+    4:   <ol> 
+    5:     <h2><%= cat.name %></h2>
+    6:     <li><%= "Birthday: " + cat.birth_date %></li>
+    7:     <li><%= "Color: " + cat.color %></li>
+    8:     <li><%= "Sex: " + cat.sex %></li>
+    9:     <li><%= "Description: " + cat.description %></li>
+  
+app/views/cats/index.html.erb:6:in `+'
+app/views/cats/index.html.erb:6:in `block in _app_views_cats_index_html_erb__2508681614239188232_70277966186040'
+app/views/cats/index.html.erb:3:in `_app_views_cats_index_html_erb__2508681614239188232_70277966186040'
+app/controllers/cats_controller.rb:4:in `index'
+Started GET "/cats" for ::1 at 2021-10-08 20:00:06 -0400
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.5ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:3
+  Rendered cats/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 25ms (Views: 24.5ms | ActiveRecord: 0.5ms)
+
+

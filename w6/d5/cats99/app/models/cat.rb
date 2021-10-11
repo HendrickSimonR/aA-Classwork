@@ -12,13 +12,13 @@
 #  updated_at  :datetime         not null
 #
 class Cat < ApplicationRecord
-  @@CAT_COLORS = %w(
-    brown, black, white, orange, calico, gray,
-    blue, stripes, rainbow 
+  CAT_COLORS = %w(
+    brown black white orange calico gray
+    blue stripes rainbow 
     )
 
-  validates :color, inclusion: { in: @@CAT_COLORS }
-  validates :sex, inclusion: { in: %w( M, F ) }
+  validates :color, inclusion: { in: CAT_COLORS }
+  validates :sex, inclusion: { in: %w( M F ) }
 
   def age
     time = Time.now 

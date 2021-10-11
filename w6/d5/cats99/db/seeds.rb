@@ -7,4 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 ActiveRecord::Base.transaction do
   Cat.destroy_all
+
+  karl = Cat.create(birth_date: '2020/06/12', color: 'orange', name: 'Karl', sex: 'M', description: 'nani, nani, nani?')
 end
