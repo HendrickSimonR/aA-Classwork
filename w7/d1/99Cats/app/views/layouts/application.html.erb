@@ -2,6 +2,23 @@
 <html>
   <head>
     <title>NinetyNineCats</title>
+    <h2>
+    <% if current_user.nil? %>
+      <a href="<%= new_session_url %>">Log In</a>
+      <a href="<%= new_user_url %>">Sign Up</a>
+    <% else %>
+      <%= current_user.username %>
+      <form action="<%= session_url %>" method="post">
+        <input
+          type="hidden"
+          name="authenticity_token"
+          value="<%= form_authenticity_token %>">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Logout">
+      </form>
+    <% end %>
+    </h2>
+  
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
