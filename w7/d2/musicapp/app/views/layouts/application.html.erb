@@ -10,6 +10,16 @@
   </head>
 
   <body>
+
+    <% if logged_in? %> 
+      <%= button_to 'Sign Out', action: session_url, method: :delete %>
+    <% else %> 
+      <%= button_to 'Sign Up', action: new_user_url %>
+      <%= button_to 'Sign In', action: new_session_url %>
+    <% end %> 
+
+
+
     <%= yield %>
   </body>
 </html>
