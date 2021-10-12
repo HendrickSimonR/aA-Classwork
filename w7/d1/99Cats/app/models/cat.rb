@@ -30,6 +30,8 @@ class Cat < ApplicationRecord
     class_name: :CatRentalRequest,
     dependent: :destroy
 
+  
+
   def age
     time_ago_in_words(birth_date)
   end

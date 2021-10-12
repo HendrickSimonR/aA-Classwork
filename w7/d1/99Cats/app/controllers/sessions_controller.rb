@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
-  before_action :require_logged_in, only:[:destroy]
-  before_action :require_logged_out, only:[:new, :create]
+  before_action redirect_to cats_url if current_user
 
   def new 
     #look up the user's account by username
@@ -15,7 +14,7 @@ class SessionsController < ApplicationController
     ) 
 
     if @user
-      login(@user)
+      login_user!(@user)
       redirect_to cats_url
     else  
       render json: ["Invalid Username or Password"]
