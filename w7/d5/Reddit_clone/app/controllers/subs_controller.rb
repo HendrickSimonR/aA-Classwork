@@ -1,5 +1,6 @@
 class SubsController < ApplicationController
-  before_action :require_logged_in
+  before_action :require_logged_in, except: [:index, :show]
+  before_action :require_user_owns_sub!, only: [:edit, :update]
   
   def new 
     @sub = Sub.new
@@ -24,7 +25,7 @@ class SubsController < ApplicationController
       flash.now[:errors] = @sub.errors.full_messages
       render :edit
     end
-    
+
   def index 
     @subs = Sub.all
     render :index 
@@ -38,6 +39,13 @@ class SubsController < ApplicationController
   def edit 
     @sub = Sub.find(params[:id])
   end 
+
+  private 
+
+  def require_user_owns_sub!
+    return if current_user.subs.find_by(id: params[:id])
+    render json: 'Forbidden', status: :forbidden
+  end
 
   def sub_params 
     params.require(:sub).permit(:title, :description)
