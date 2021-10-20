@@ -8,17 +8,19 @@ function Piece (color) {
 /**
  * Returns the color opposite the current piece.
  */
-Piece.prototype.oppColor = function (otherColor) {
-  if (this.color !== otherColor) {
-    return this.color = otherColor;
+Piece.prototype.oppColor = function () {
+  if (this.color === 'black') {
+    return 'white';
+  } else {
+    return 'black';
   }
 };
 
 /**
  * Changes the piece's color to the opposite color.
  */
-Piece.prototype.flip = function (cb, otherColor) {
-  return this.cb(otherColor);
+Piece.prototype.flip = function () {
+  return this.color = this.oppColor();
 };
 
 /**
