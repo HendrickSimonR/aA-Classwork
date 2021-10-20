@@ -73,12 +73,27 @@ Board.prototype.getPiece = function (pos) {
  * matches a given color.
  */
 Board.prototype.isMine = function (pos, color) {
+  let x = pos[0];
+  let y = pos[1];
+
+  if (this.grid[x][y] === undefined){
+    return false;
+  }  
+  
+  return this.grid[x][y].color === color;
 };
 
 /**
  * Checks if a given position has a piece on it.
  */
 Board.prototype.isOccupied = function (pos) {
+  let x = pos[0];
+  let y = pos[1];
+
+  if (this.grid[x][y] === undefined){
+    return false;
+  } 
+  return true
 };
 
 /**
