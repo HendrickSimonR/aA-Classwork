@@ -148,6 +148,11 @@ Board.DIRS = [
  * color being flipped.
  */
 Board.prototype.validMove = function (pos, color) {
+  let x = pos[0];
+  let y = pos[1];
+
+  if (!this.isOccupied(pos)) {
+  }
 };
 
 /**
