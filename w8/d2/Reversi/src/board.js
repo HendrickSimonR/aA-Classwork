@@ -31,11 +31,6 @@ function Board () {
   this.grid = _makeGrid();
 }
 
-Board.DIRS = [
-  [ 0,  1], [ 1,  1], [ 1,  0],
-  [ 1, -1], [ 0, -1], [-1, -1],
-  [-1,  0], [-1,  1]
-];
 
 /**
  * Checks if a given position is on the Board.
@@ -89,7 +84,7 @@ Board.prototype.isMine = function (pos, color) {
 Board.prototype.isOccupied = function (pos) {
   let x = pos[0];
   let y = pos[1];
-
+  
   if (this.grid[x][y] === undefined){
     return false;
   } 
@@ -109,8 +104,43 @@ Board.prototype.isOccupied = function (pos) {
  *
  * Returns empty array if no pieces of the opposite color are found.
  */
-Board.prototype._positionsToFlip = function(pos, color, dir, piecesToFlip){
+Board.prototype._positionsToFlip = function(pos, color, dir, piecesToFlip=[]){
+  let x = pos[0];
+  let y = pos[1];
+  let moveRow = dir[0];
+  let moveCol = dir[1];
+  let newPos = [x + moveRow, y + moveCol];
+  
+
+  if (!this.isValidPos(newPos)) {
+    return [];
+  } else if (!this.isOccupied(newPos)) {
+    return [];
+  } else if (this.isMine(newPos, color)) {
+    return piecesToFlip;
+  } else {
+    piecesToFlip.push(newPos);
+  }
+  
+  return this._positionsToFlip(newPos, color, dir, piecesToFlip);
 };
+
+/*
+for loop through board.DIRS
+add 0,1 to x,y
+if pos is undefined, return []
+
+
+pos + dir === newPos
+_positionsToFlip(newPos, color, dir, piecesToFlip)
+*/
+
+Board.DIRS = [
+  [ 0,  1], [ 1,  1], [ 1,  0],
+  [ 1, -1], [ 0, -1], [-1, -1],
+  [-1,  0], [-1,  1]
+];
+
 
 /**
  * Checks that a position is not already occupied and that the color
