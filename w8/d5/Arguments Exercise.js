@@ -69,6 +69,33 @@
 // }
 
 
+
+// Function.prototype.myBind = function (ctx, ...args) {
+//   let func = this;
+//   let bindArgs = args;
+//   console.log(func);
+//   console.log(ctx);
+//   console.log(bindArgs);
+
+//   return function (...args) {
+//     let callArgs = args;
+//     console.log(args)
+//     console.log('------------------------------');
+//     return func.apply(ctx, bindArgs.concat(callArgs));
+//   }
+// }
+
+// Function.prototype.myBind = function (ctx, ...args) {
+//   let func = this;
+//   let bindArgs = args;
+
+//   return function (...args) {
+//     let callArgs = args;
+//     return func.apply(ctx, bindArgs.concat(callArgs));
+//   }
+// }
+
+
 // const markov = new Cat("Markov");
 // const pavlov = new Dog("Pavlov");
 
@@ -97,3 +124,18 @@
 // // Pavlov says meow to me!
 // // true
 
+
+function sumThree(num1, num2, num3) {
+  return num1 + num2 + num3;
+}
+
+sumThree(4, 20, 6); // == 30
+
+// you'll write `Function#curry`!
+let f1 = sumThree.curry(3); // tells `f1` to wait until 3 arguments are given before running `sumThree`
+f1 = f1(4); // [Function]
+f1 = f1(20); // [Function]
+f1 = f1(6); // = 30
+
+// or more briefly:
+sumThree.curry(3)(4)(20)(6); // == 30
