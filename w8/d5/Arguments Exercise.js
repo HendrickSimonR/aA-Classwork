@@ -125,17 +125,48 @@
 // // true
 
 
-function sumThree(num1, num2, num3) {
-  return num1 + num2 + num3;
+function curriedSum(numArgs) {
+  const nums = [];
+  
+  return function _curriedAdd(nextNum) {
+    nums.push(nextNum);
+
+    if (nums.length === numArgs) {
+      // console.log(nums);
+      let sum = nums.reduce( (acc, el) => acc + el);
+      return sum;
+    } else {
+      // console.log(nums);
+      return _curriedAdd;
+    }  
+  }
 }
 
-sumThree(4, 20, 6); // == 30
+console.log(curriedSum(3)(4)(20)(6)); // == 30
 
-// you'll write `Function#curry`!
-let f1 = sumThree.curry(3); // tells `f1` to wait until 3 arguments are given before running `sumThree`
-f1 = f1(4); // [Function]
-f1 = f1(20); // [Function]
-f1 = f1(6); // = 30
+// function boringAddThreeNumbers(num1, num2, num3) {
+//   return num1 + num2 + num3;
+// }
+
+// curried version:
+// function addThreeNumbers(num1) {
+//   return function (num2) {
+//     return function (num3) {
+//       return num1 + num2 + num3;
+//     };
+//   };
+// }
+
 
 // or more briefly:
-sumThree.curry(3)(4)(20)(6); // == 30
+// console.log(addThreeNumbers(3)(4)(20)); // == 30
+
+// sumThree(4, 20, 6); // == 30
+
+// // you'll write `Function#curry`!
+// let f1 = sumThree.curry(3); // tells `f1` to wait until 3 arguments are given before running `sumThree`
+// f1 = f1(4); // [Function]
+// f1 = f1(20); // [Function]
+// f1 = f1(6); // = 30
+
+// or more briefly:
