@@ -1,0 +1,26 @@
+ul{
+  display: flex;
+  flex-wrap: wrap;
+  width: 180px;
+  height: 180px;
+  /* background: purple; */
+}
+
+li{
+  list-style-type: none;
+  background:plum;
+  width: 58px;
+  height: 58px;
+  border: white 1px solid;
+}
+
+li:hover {
+  background: purple;
+  cursor: pointer;
+}
+
+/* .mark{
+  background: white;
+} */
+
+
