@@ -2,7 +2,9 @@ class View {
   constructor(game, el) {
     this.game = game;
     this.el = el;
+    this.handleClick = this.handleClick.bind(this);
     this.setupBoard();
+    this.bindEvents();
   }
 
   setupBoard() {
@@ -20,23 +22,24 @@ class View {
   }
   
   bindEvents() {
+    // this.el.addEventListener('click', this.handleClick);
     const cells = document.querySelectorAll('li');
-    cells.forEach(cell => cell.addEventListener('click', handleClick));
+    cells.forEach(cell => cell.addEventListener('click', this.handleClick));
   }
-
+  
   handleClick(e) {
     //console.log('greet:', arguments)
-    let squares = document.querySelectorAll("li");
-    squares.forEach(square => {
-      this.makeMove(square)
-    })
+    let square = e.target;
+    console.log(square);
+    this.makeMove(square)
   }
-
+  
   makeMove(square) {
     let dataPos = square.dataset.pos
     let pos = [parseInt(dataPos[1]), parseInt(dataPos[3])];
     if (this.game.board.isEmptyPos(pos)) {
       this.game.playMove(pos);
+      square.classList.toggle("mark");
     }
   }
 
